@@ -1,6 +1,8 @@
 #include<cstdio>
+#include<string>
 #include<cmath>
 #include<vector>
+
 using namespace std;
 void hanoi(int n, int s, int m, int e) {
 	if (n == 1) {
@@ -14,34 +16,13 @@ void hanoi(int n, int s, int m, int e) {
 
 int main()
 {
-	int n, t = 0;
-	vector<int> v;
+	int n;
 	scanf("%d", &n);
-	v.push_back(1);
-	for (int i = 1; i <= n; i++) {
-		v.push_back(0);
-		for (int j =0; j <v.size(); j++) {
-
-			v[j] = v[j] + v[j] + t;
-			if (v[j] >= 10) {
-				v[j] %= 10;
-				t = 1;
-			}
-			else t = 0;
-
-		}
-	}
-	bool flag = false;
-	for (int i = v.size() - 1; i >= 0; i--) {
-		if (v[i] == 0 && !flag) continue;
-		flag = true;
-		if (i == 0) {
-			printf("%d", v[i] - 1);
-			break;
-		}
-		printf("%d", v[i]);
-	}
+	string s = to_string(pow(2, n));
+	s = s.substr(0, s.find('.'));
+	s[s.length() - 1] -= 1;
+	printf("%s", s.c_str());
 	printf("\n");
-	if(n<=20)hanoi(n, 1, 2, 3);
+	if (n <= 20)hanoi(n, 1, 2, 3);
 	return 0;
 }
