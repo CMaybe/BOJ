@@ -25,6 +25,7 @@ int main()
 		int t = q.front();
 		q.pop();
 		if (v[t] > v[k])continue;
+		if(t==k) break;
 		if (t * 2 <= 100000 && t!=0) bfs[t].push_back(t * 2);
 		if (t - 1 >= 0)bfs[t].push_back(t - 1);
 		if (t + 1 <= 100000)bfs[t].push_back(t + 1);
