@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
     		cout<<cnt+1;
     		break;
 		}
+		cnt++;
 	}
 }
-
 
