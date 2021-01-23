@@ -1,0 +1,6 @@
+m=input()
+m=int(m)
+n=input()
+n=int(n)
+print((m+n)//2)
+print((m+n)//2-n)
