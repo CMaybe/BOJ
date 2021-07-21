@@ -21,7 +21,7 @@ struct compare{
 
 int dp[20001];
 
-int main() {
+int main(int argc, char* argv[]) {
     ios_base::sync_with_stdio(false);
     cin.tie(0);
 	int V, E;
@@ -42,6 +42,7 @@ int main() {
 	pq.push({ s,0 });
 	while (!pq.empty()) {
 		int node = pq.top().node;
+		if(node==e) break;
 		int val = -pq.top().weight;
 		pq.pop();
 		for (auto x : arr[node]) {
