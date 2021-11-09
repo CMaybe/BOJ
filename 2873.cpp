@@ -54,13 +54,13 @@ int main()
 			}
 			flag = false;
 			cout << "RD";
-			for(int j = mc;j<c;j++){
+			for(int j = mc+1;j<c;j++){
 				cout <<'R';
 				cout << (flag ? 'D' : 'U');
 				flag ^= true;
 			}
 			if(mr<r) cout <<'D';
-			for(int i = mr+2;i<=r;i++){
+			for(int i = mr+1;i<=r;i++){
 				for(int j = 1;j<c;j++) cout << (i%2==0 ? 'R' : 'L');
 				if(i<r) cout<<'D';
 			}
@@ -78,7 +78,7 @@ int main()
 			}
 			flag = false;
 			cout << "DR";
-			for(int j = mc;j<c;j++){
+			for(int j = mc+1;j<=c;j++){
 				cout <<'R';
 				cout << (flag ? 'D' : 'U');
 				flag ^= true;
